@@ -1,7 +1,6 @@
 import ProductList from '@/components/product-list'
 import React from 'react'
 import { Products_Data } from '@/lib/api/dummy_api'
-import Seperator from '@/components/ui/seperator'
 
 export default function Cart() {
   return (
