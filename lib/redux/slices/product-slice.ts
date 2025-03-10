@@ -4,7 +4,7 @@ import { Product } from "@/lib/types/product";
 export const fetchProducts = createAsyncThunk<Product[], void>(
   "product/fetchProducts",
   async () => {
-    const response = await fetch("https://your-api-endpoint.com/products");
+    const response = await fetch("https://otx0e1z2lg.execute-api.us-west-2.amazonaws.com/products");
     return await response.json();
   }
 );
