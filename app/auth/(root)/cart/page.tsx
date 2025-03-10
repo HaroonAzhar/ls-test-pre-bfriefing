@@ -2,8 +2,10 @@ import ProductList from '@/components/product-list'
 import React from 'react'
 import { Products_Data } from '@/lib/api/dummy_api'
 import Seperator from '@/components/ui/seperator'
+import { useProducts } from '@/hooks/useProducts';
 
 export default function Cart() {
+    const { items, addItem, removeItem, total } = useProducts();
   return (
     <div className='flex justify-center bg-red-400'>
         <div className=' flex-[3] m-5 p-5 bg-green-300'>
