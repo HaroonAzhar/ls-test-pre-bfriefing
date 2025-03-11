@@ -10,7 +10,7 @@ export default function CartItem({item}:{item: CartItemType}) {
   return (
   <div key={item.id} className="flex justify-between">
     <div className="flex">
-        <input className="bg-white-200" type="number" 
+        <input className="bg-orange-200 w-12" type="number" 
            value={item.quantity}
            onChange={(e) => dispatch(updateQuantity({ id: item.id, quantity: Number(e.target.value) }))}
          />
