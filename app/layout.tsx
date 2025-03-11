@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 const latoFont = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
-  weight: "900"
+  weight: ["300", "400", "700", "900"]
 });
 
 

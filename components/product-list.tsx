@@ -10,9 +10,9 @@ export default function ProductList({ products }: { products: Product[] }) {
 
   return (
     <div>
-      <div className="flex justify-between">
-        <p>Product</p>
-        <p>Retail Price</p>
+      <div className="flex mt-5 justify-between">
+        <h3 className="text-lg font-bold">Product</h3>
+        <h3 className="text-lg font-bold">Retail Price</h3>
       </div>
       <Seperator />
       <ul>
