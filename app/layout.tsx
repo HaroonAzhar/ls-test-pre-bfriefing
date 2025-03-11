@@ -1,20 +1,19 @@
 "use client";
 // import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/navbar";
 import { store } from "@/lib/redux/store";
 import { Provider } from "react-redux";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const latoFont = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
+  weight: "900"
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -29,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${latoFont.variable}  `}
       >
         <Provider store={store}>
         <NavBar/>
