@@ -22,7 +22,6 @@ export default function Cart() {
         {loading ? <p>Loading...</p> : <ProductList products={products} />}
       </div>
       <div className="flex-[2] m-5 p-5 bg-blue-300">
-        <h2>Cart Display</h2>
         <CartList />
       </div>
     </div>
