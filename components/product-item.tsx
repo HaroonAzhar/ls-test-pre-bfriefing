@@ -15,7 +15,7 @@ export default function ProductItem({product}:{product:Product}) {
               />
             </div>
             <div className='ml-2'>
-                <p className="font-bold" >{product.name}</p>
+                <p className="" >{product.name}</p>
                 <p className="text-sm">{product.sku}</p>
             </div>
         </div> 

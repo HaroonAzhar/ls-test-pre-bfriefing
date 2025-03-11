@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Provider store={store}>
         <NavBar/>
-          <div className=" bg-yellow-300 container mx-auto">
+          <div className="container mx-auto">
             {children}          
           </div>
         </Provider>
