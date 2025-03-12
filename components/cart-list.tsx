@@ -11,7 +11,7 @@ export default function CartList() {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="h-screen flex flex-col flex-col border-2 border-gray-200 rounded-lg">
+    <div className="h-screen flex flex-col  border-2 border-gray-200 rounded-lg">
       {checkoutSuccess ? (
         <p>Order Successful!</p>
       ) : (
@@ -22,13 +22,13 @@ export default function CartList() {
               ))}
         </div>
 
-        <div className="bg-gray-200 p-4">
+        <div className="bg-gray-200 px-6 py-8">
                 <button
                   onClick={() => dispatch(checkoutCart(cartItems))}
                   className="w-full bg-blue-600 text-white p-4 font-bold flex justify-between"
                 >
-                  <span>Pay {cartItems.length}</span>
-                  <span>${totalPrice.toFixed(2)}</span>
+                  <p>Pay <span className="text-xs" >{cartItems.length} items</span></p>
+                  <p>${totalPrice.toFixed(2)}</p>
                 </button>
               </div>
 

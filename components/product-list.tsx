@@ -14,11 +14,12 @@ export default function ProductList({ products }: { products: Product[] }) {
         <h3 className="text-lg font-bold">Product</h3>
         <h3 className="text-lg font-bold">Retail Price</h3>
       </div>
-      <Seperator />
+      <Seperator classes=""/>
       <ul>
         {products.map((item, ind) => (
           <div key={ind} onClick={() => dispatch(addToCart(item))}>
             <ProductItem product={item} />
+            <Seperator classes=""/>
           </div>
         ))}
       </ul>
