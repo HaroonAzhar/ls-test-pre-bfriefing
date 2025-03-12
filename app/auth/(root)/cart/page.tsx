@@ -14,14 +14,14 @@ export default function Cart() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
+console.log("whole page loaded")
   return (
     <div className="flex justify-center">
       <div className="flex-[4] m-10 px-5">
         <h2 className="text-3xl font-extrabold">Products</h2>
         {loading ? <p>Loading...</p> : <ProductList products={products} />}
       </div>
-      <div className="flex-[4] m-10  bg-white">
+      <div className="flex-[4] m-10 h-[80vh] border-2 border-gray-200 rounded-lg bg-white">
         <CartList />
       </div>
     </div>

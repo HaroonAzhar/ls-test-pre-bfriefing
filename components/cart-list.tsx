@@ -11,7 +11,7 @@ export default function CartList() {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="h-screen flex flex-col  border-2 border-gray-200 rounded-lg">
+    <div className="h-[80vh] flex flex-col  ">
       {checkoutSuccess ? (
         <p>Order Successful!</p>
       ) : (
