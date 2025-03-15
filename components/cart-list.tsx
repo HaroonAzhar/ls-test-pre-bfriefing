@@ -11,24 +11,24 @@ export default function CartList() {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="h-[80vh] flex flex-col  ">
+    <div className="h-[85vh] flex flex-col  border-2 border-gray-200 rounded-lg">
       {checkoutSuccess ? (
         <p>Order Successful!</p>
       ) : (
         <>
-        <div className="flex-grow  overflow-auto">
+        <ul className="flex-grow overflow-auto list-none">
         {cartItems.map((item,ind) => (
-                    <CartItem key={ind} item={item} />
+            <CartItem key={ind} item={item} />
               ))}
-        </div>
+        </ul>
 
-        <div className="bg-gray-200 px-6 py-8">
+        <div className="bg-gray-200 px-4 py-5">
                 <button
                   onClick={() => dispatch(checkoutCart(cartItems))}
-                  className="w-full bg-blue-600 text-white p-4 font-bold flex justify-between"
+                  className="w-full bg-blue-600 text-white p-5 rounded font-bold flex justify-between"
                 >
-                  <p>Pay <span className="text-xs" >{cartItems.length} items</span></p>
-                  <p>${totalPrice.toFixed(2)}</p>
+                  <p className="text-lg">Pay <span className="text-xs relative -top-1" >{cartItems.length} items</span></p>
+                  <p className="text-lg ">${totalPrice.toFixed(2)}</p>
                 </button>
               </div>
 
