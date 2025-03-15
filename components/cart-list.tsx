@@ -16,21 +16,21 @@ export default function CartList() {
         <p>Order Successful!</p>
       ) : (
         <>
-        <ul className="flex-grow overflow-auto list-none">
+        <div className="flex-grow overflow-auto list-none">
         {cartItems.map((item,ind) => (
-            <CartItem key={ind} item={item} />
+            <CartItem key={ind}  last={ (ind + 1 >= cartItems.length) } item={item} />
               ))}
-        </ul>
+        </div>
 
         <div className="bg-gray-200 px-4 py-5">
                 <button
                   onClick={() => dispatch(checkoutCart(cartItems))}
-                  className="w-full bg-blue-600 text-white p-5 rounded font-bold flex justify-between"
+                  className="w-full bg-lsPurple-100 text-white p-5 rounded font-bold flex justify-between"
                 >
-                  <p className="text-lg">Pay <span className="text-xs relative -top-1" >{cartItems.length} items</span></p>
+                  <p className="text-lg">Pay <span className="text-xs relative -top-1 ml-1 text-slate-300" >{cartItems.length} items</span></p>
                   <p className="text-lg ">${totalPrice.toFixed(2)}</p>
                 </button>
-              </div>
+          </div>
 
         </>
       )}

@@ -2,7 +2,7 @@
 
 :root {
   --background: #f0f2f8;
-  --foreground: #171717;
+  --foreground: #18aa2c;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -20,6 +20,9 @@ input[type="number"] {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-lato: var(--font-lato);
+  --color-lsPurple-100: #3b19fe;
+  --color-lsBlack-100: #1e1e20;
 }
 
 @media (prefers-color-scheme: dark) {
