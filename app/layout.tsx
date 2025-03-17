@@ -27,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body
         className={`${latoFont.variable}  `}
       >
         <Provider store={store}>
         <NavBar/>
-          <div className=" bg-yellow-300 container mx-auto">
+          <div className=" w-full lg:w-[90%] mx-auto ">
             {children}          
           </div>
         </Provider>

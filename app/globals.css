@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f2f8;
+  --foreground: #18aa2c;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -20,6 +20,9 @@ input[type="number"] {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-lato: var(--font-lato);
+  --color-lsPurple-100: #3b19fe;
+  --color-lsBlack-100: #1e1e20;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,8 +30,8 @@ input[type="number"] {
     /* --background: #0a0a0a; */
     /* --background: rgba(26, 175, 26, 0.667); */
     /* --background:linear-gradient(to right, #e7e7e7 0%, #e7e7e7 100%) */
-    --background:linear-gradient(to right, #f4f4f4 0%, #f4f4f4 100%)
-    --foreground: #ededed;
+    --background:#f0f2f8;
+    --foreground: #525456;
   }
 }
 

@@ -8,21 +8,21 @@ import CartList from "@/components/cart-list";
 
 export default function Cart() {
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
   const products = useAppSelector((state) => state.product.products);
   const loading = useAppSelector((state) => state.product.loading);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
   return (
-    <div className="flex justify-center bg-red-400">
-      <div className="flex-[3] m-5 p-5 bg-green-300">
+    <div className="flex flex-col md:flex-row justify-center">
+      <div className="flex-[4]  m-10 px-5">
         <h2 className="text-3xl font-extrabold">Products</h2>
         {loading ? <p>Loading...</p> : <ProductList products={products} />}
       </div>
-      <div className="flex-[2] m-5 p-5 bg-blue-300">
-        <CartList />
+      <div className="flex-[4] m-10 h-[85vh] border-2 border-gray-200 rounded-lg bg-white">
+        <CartList items={cartItems} />
       </div>
     </div>
   );
