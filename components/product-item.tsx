@@ -15,11 +15,11 @@ export default function ProductItem({product}:{product:Product}) {
               />
             </div>
             <div className='ml-2'>
-                <p className="font-bold" >{product.name}</p>
-                <p className="text-sm">{product.sku}</p>
+                <p className="text-sm md:text-base font-bold  " >{product.name}</p>
+                <p className="text-xs md:text-sm ">{product.sku}</p>
             </div>
         </div> 
-        <p className="font-bold">${product.price}</p>   
+        <p className="text-sm md:text-base font-bold ">${product.price}</p>   
     </div>
   )
 }

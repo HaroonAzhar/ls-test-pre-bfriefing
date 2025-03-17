@@ -8,13 +8,13 @@ import CartList from "@/components/cart-list";
 
 export default function Cart() {
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
   const products = useAppSelector((state) => state.product.products);
   const loading = useAppSelector((state) => state.product.loading);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-console.log("whole page loaded")
   return (
     <div className="flex flex-col md:flex-row justify-center">
       <div className="flex-[4]  m-10 px-5">
@@ -22,7 +22,7 @@ console.log("whole page loaded")
         {loading ? <p>Loading...</p> : <ProductList products={products} />}
       </div>
       <div className="flex-[4] md:w-1/2 m-10 h-[85vh] border-2 border-gray-200 rounded-lg bg-white">
-        <CartList />
+        <CartList items={cartItems} />
       </div>
     </div>
   );
