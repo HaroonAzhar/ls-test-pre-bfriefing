@@ -21,7 +21,7 @@ export default function Cart() {
         <h2 className="text-3xl font-extrabold">Products</h2>
         {loading ? <p>Loading...</p> : <ProductList products={products} />}
       </div>
-      <div className="flex-[4] md:w-1/2 m-10 h-[85vh] border-2 border-gray-200 rounded-lg bg-white">
+      <div className="flex-[4] m-10 h-[85vh] border-2 border-gray-200 rounded-lg bg-white">
         <CartList items={cartItems} />
       </div>
     </div>
