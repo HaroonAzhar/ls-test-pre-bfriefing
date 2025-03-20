@@ -23,8 +23,8 @@ const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    restoreProduct(state, action) {
-      state.products.push(action.payload);
+    restoreProduct(state) {
+      state.products = [];
     },
   },
   extraReducers: (builder) => {

@@ -10,7 +10,8 @@ export default function ProductList({ products }: { products: Product[] }) {
 
   return (
     <div>
-      <div className="flex mt-6 pb-3 border-b-1 border-gray-400 justify-between">
+      <h2 className="text-3xl font-extrabold">Products</h2>
+      <div className="flex mt-4 pb-3 border-b-1 border-gray-400 justify-between">
         <h3 className="text-lg font-bold">Product</h3>
         <h3 className="text-lg font-bold">Retail Price</h3>
       </div>

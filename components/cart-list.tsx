@@ -1,8 +1,10 @@
 "use client";
 import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks";
-import { removeFromCart, updateQuantity, checkoutCart } from "@/lib/redux/slices/cart-slice";
+import {  checkoutCart } from "@/lib/redux/slices/cart-slice";
 import CartItem from "./cart-item";
 import { CartItem as CartItemType } from "@/lib/types/cart";
+import SalesButton from "./sales-button";
+import { ButtonVariant } from "@/lib/types/props";
 
 export default function CartList({items}:{items:CartItemType[]}) {
   const dispatch = useAppDispatch();
@@ -11,28 +13,20 @@ export default function CartList({items}:{items:CartItemType[]}) {
 
   return (
     <div className="h-[85vh] flex flex-col  border-2 border-gray-200 rounded-lg">
+      <div className="flex-grow overflow-auto">
       {checkoutSuccess ? (
-        <p>Order Successful!</p>
-      ) : (
-        <>
-        <div className="flex-grow overflow-auto list-none">
-        {items.map((item,ind) => (
-            <CartItem key={ind}  last={ (ind + 1 >= items.length) } item={item} />
-              ))}
-        </div>
+          <p className="text-base md:text-4xl text-center mt-6 font-bold">Payment Received!</p>
+        ) : (
+          <>
+        
+          {items.map((item,ind) => (
+              <CartItem key={ind}  last={ (ind + 1 >= items.length) } item={item} />
+                ))}
+            </>
+        )}    
+      </div> 
+      {checkoutSuccess? <SalesButton variant={ButtonVariant.Summary} /> : <SalesButton variant={ButtonVariant.Checkout} /> }
 
-        <div className="bg-gray-200 px-4 py-5">
-                <button
-                  onClick={() => dispatch(checkoutCart(items))}
-                  className="w-full bg-lsPurple-100 text-white p-5 rounded font-bold flex justify-between"
-                >
-                  <p className="text-lg">Pay <span className="text-xs relative -top-1 ml-1 text-slate-300" >{items.length} items</span></p>
-                  <p className="text-lg ">${totalPrice.toFixed(2)}</p>
-                </button>
-          </div>
-
-        </>
-      )}
     </div>
   );
 }
