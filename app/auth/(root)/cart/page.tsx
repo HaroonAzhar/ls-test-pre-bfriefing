@@ -9,9 +9,10 @@ import CartList from "@/components/cart-list";
 export default function Cart() {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((state) => state.cart.cartItems);
-  const checkoutSuccess = useAppSelector((state) => state.cart.checkoutSuccess);
+ 
   const products = useAppSelector((state) => state.product.products);
   const loading = useAppSelector((state) => state.product.loading);
+  const checkoutSuccess = useAppSelector((state) => state.cart.checkoutSuccess);
 
   useEffect(() => {
     dispatch(fetchProducts());

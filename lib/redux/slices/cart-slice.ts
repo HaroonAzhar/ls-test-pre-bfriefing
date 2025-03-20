@@ -28,7 +28,8 @@ export const checkoutCart = createAsyncThunk("cart/checkout", async (cart: CartI
     
     const resp = await response.json();
     console.log("response", resp);
-    return resp
+    return resp;
+    //store response for summary 
   } catch (error:any) {
     return rejectWithValue(error.message);
   }
